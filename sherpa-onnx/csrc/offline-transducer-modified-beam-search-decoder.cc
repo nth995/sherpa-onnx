@@ -211,6 +211,8 @@ OfflineTransducerModifiedBeamSearchDecoder::Decode(
       h.timestamps = std::move(hyp.timestamps);
       h.ys_log_probs = std::move(hyp.ys_probs);
       h.score = static_cast<float>(hyp.TotalLogProb());
+      h.normalized_score =
+          static_cast<float>(hyp.TotalLogProb() / hyp.ys.size());
       r.hypotheses.push_back(std::move(h));
     }
 

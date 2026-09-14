@@ -92,7 +92,9 @@ static void PybindOfflineRecognitionHypothesis(py::module *m) {  // NOLINT
       .def_property_readonly("ys_log_probs",
         [](const PyClass &self) { return self.ys_log_probs; })
       .def_property_readonly("score",
-        [](const PyClass &self) { return self.score; });
+        [](const PyClass &self) { return self.score; })
+      .def_property_readonly("normalized_score",
+        [](const PyClass &self) { return self.normalized_score; });
 }
 
 static void PybindOfflineRecognitionResult(py::module *m) {  // NOLINT

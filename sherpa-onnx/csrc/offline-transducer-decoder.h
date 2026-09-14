@@ -25,9 +25,12 @@ struct OfflineTransducerHypothesis {
   /// ys_log_probs[i] contains the log probability (confidence) for tokens[i].
   std::vector<float> ys_log_probs;
 
-  /// Total score of this hypothesis in log space (acoustic + LM, if an LM is
-  /// used). Not length-normalized.
+  /// Total score of this hypothesis in log space.
+  /// Not length-normalized.
   float score = 0;
+
+  /// Length-normalized score used to rank N-best hypotheses.
+  float normalized_score = 0;
 };
 
 struct OfflineTransducerDecoderResult {

@@ -105,6 +105,7 @@ static OfflineRecognitionResult Convert(
     hyp.timestamps = ConvertTimestamps(h.timestamps, frame_shift_s);
     hyp.ys_log_probs = h.ys_log_probs;
     hyp.score = h.score;
+    hyp.normalized_score = h.normalized_score;
     r.hypotheses.push_back(std::move(hyp));
   }
 

@@ -35,6 +35,7 @@ struct OfflineRecognitionHypothesis {
   /// Total score of this hypothesis in log space (acoustic + LM, if an LM is
   /// used). Not length-normalized.
   float score = 0;
+  float normalized_score = 0;
 };
 
 struct OfflineRecognitionResult {
